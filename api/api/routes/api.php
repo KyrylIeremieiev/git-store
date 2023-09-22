@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/hello', function () {
+    DB::insert('insert into user (cookie, username, pass) values (?, ?, ?)', array(1, 'Dayle', 'myPass'));
+    return "Hello World!";
+  });
+
+Route::post('/createAccount', 'App\Http\Controllers\CreateAccountController@insertData');
