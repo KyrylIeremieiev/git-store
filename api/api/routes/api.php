@@ -24,3 +24,5 @@ Route::get('/hello', function () {
   });
 
 Route::post('/createAccount', 'App\Http\Controllers\CreateAccountController@insertData');
+
+Route::post('/login', 'App\Http\Controllers\LoginController@login');
