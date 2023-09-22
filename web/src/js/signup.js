@@ -22,6 +22,7 @@ class Signup{
         .catch(function(res){ console.log(res) })
         document.cookie = `user=` + this.cookie;
         console.log(document.cookie);
+        window.location.href = "./index.html";
     }
 }
 

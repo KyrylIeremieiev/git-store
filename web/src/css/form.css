@@ -27,7 +27,7 @@ div{
 
 .form__u{
     resize: none;
-    width: 100%;
+    width: 28rem;
     height: 2rem;
     padding: 0.2rem;
     display: flex;
@@ -37,7 +37,7 @@ div{
 
 .form__p{
     resize: none;
-    width: 100%;
+    width: 28rem;
     height: 2rem;
     padding: 0.2rem;
     display: flex;
@@ -48,6 +48,7 @@ div{
 .form__button{
     background: #F4E869;
     height: 2rem;
+    width: 28rem;
 }
 
 .form__button:hover{
@@ -58,4 +59,12 @@ div{
 
 .form__label{
     font-size: 110%;
+}
+
+.login{
+    color: #191717;
+}
+
+.login:hover{
+    color: #FAF2D3;
 }
