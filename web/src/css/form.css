@@ -1,0 +1,61 @@
+body{
+    background: #FAF2D3;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    height: 100vh;
+    color: #191717;
+}
+
+div{
+    width: 100%;
+}
+.form__card{
+    width: 30rem;
+    height: 30rem;
+    background: #5CD2E6;
+    box-shadow: 5px 10px #888888;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.2rem;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.form__u{
+    resize: none;
+    width: 100%;
+    height: 2rem;
+    padding: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__p{
+    resize: none;
+    width: 100%;
+    height: 2rem;
+    padding: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__button{
+    background: #F4E869;
+    height: 2rem;
+}
+
+.form__button:hover{
+    background: #3085C3;
+    color: #F4E869;
+    cursor: pointer;
+}
+
+.form__label{
+    font-size: 110%;
+}
