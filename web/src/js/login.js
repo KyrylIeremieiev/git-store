@@ -1,11 +1,22 @@
 class Login{
-    constructor(name, pass, btn){
+    constructor(name, pass, btn, error){
+        this.error = error
         this.name = name;
         this.pass = pass;
         this.btn = btn;
+        this.checkForMistake();
         this.btn.onclick = this.getData;
         this.cookie = this.getCookie('user')
         console.log(this.cookie)
+    }
+
+    checkForMistake = () =>{
+        this.errorCookie = this.getCookie("error");
+        if(this.errorCookie == "'true'"){
+            this.error.style.display = "block";
+        }else{
+            this.error.style.display = "none";
+        }
     }
 
     getData = () =>{
@@ -27,9 +38,18 @@ class Login{
             })
             .then(data => {
                 // Handle the response data (query results) as needed
-                console.log(data);
                 this.data = data
-                document.cookie = "user=" + data[0].cookie;
+                document.cookie = 'data=' + data;
+                console.log(data[0])
+                if(data == "[object Object]"){
+                    document.cookie = "user=" + data[0].cookie;
+                    document.cookie = "error='false'"
+                    window.location.href = "./index.html";
+                    return
+                }
+                    document.cookie = "error='true'"
+                
+                
             })
     }
 
@@ -52,4 +72,4 @@ class Login{
     }
 }
 
-let login = new Login(document.getElementById('username'), document.getElementById('pass'), document.getElementById('submit'))
+let login = new Login(document.getElementById('username'), document.getElementById('pass'), document.getElementById('submit'), document.getElementById('error'))

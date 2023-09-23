@@ -84,3 +84,8 @@ div{
 .login:hover{
     cursor: pointer;
 }
+
+.error{
+    color: red;
+    display: none;
+}
