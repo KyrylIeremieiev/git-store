@@ -1,5 +1,6 @@
 body{
-    background: #FAF2D3;
+    background: #0E1117;
+    font-family: 'Roboto', sans-serif;
 }
 
 main{
@@ -7,54 +8,69 @@ main{
     justify-content: center;
     padding: 3rem;
     height: 100vh;
-    color: #191717;
+    color: #E6EDF2;
 }
 
 div{
     width: 100%;
 }
 .form__card{
-    width: 30rem;
-    height: 30rem;
-    background: #5CD2E6;
-    box-shadow: 5px 10px #888888;
+    width: 20rem;
+    height: 14rem;
+    background: #161B22;
     display: flex;
     flex-direction: column;
-    border-radius: 0.2rem;
+    justify-content: space-between;
+    border-radius: 0.5rem;
     padding: 2rem;
-    gap: 2rem;
+    border: 0.1rem solid #30363C;
+    font-size: 0.875rem;
+
 }
 
 .form__u{
     resize: none;
-    width: 28rem;
-    height: 2rem;
     padding: 0.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #0E1117;
+    border-radius:0.3rem;
+    width: 100%;
+    color: #E6EDF2;
+
 }
 
 .form__p{
     resize: none;
-    width: 28rem;
-    height: 2rem;
     padding: 0.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #0E1117;
+    border-radius:0.3rem;
+    width: 100%;
+    color: #E6EDF2;
 }
 
 .form__button{
-    background: #F4E869;
+    color: #E6EDF2;
+    background: #228636;
     height: 2rem;
-    width: 28rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: none;
 }
 
 .form__button:hover{
-    background: #3085C3;
-    color: #F4E869;
+    background: #2A9C41;
     cursor: pointer;
+}
+
+.inputWrap{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .form__label{
@@ -62,9 +78,9 @@ div{
 }
 
 .login{
-    color: #191717;
+    color: #3080F7;
 }
 
 .login:hover{
-    color: #FAF2D3;
+    cursor: pointer;
 }
