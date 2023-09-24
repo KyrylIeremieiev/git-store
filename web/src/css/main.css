@@ -13,6 +13,7 @@ html {
     font-weight: normal;
     color: #E6EDF2;
     font-family: 'Roboto', sans-serif;
+    line-height: 1.5rem;
   }
   
   ol, ul {
@@ -60,4 +61,47 @@ body{
     justify-content: center;
     border: 1px solid #30363C;
 
+}
+
+.welcome{
+    height: 70vh;
+    width: 100vw;
+    background: linear-gradient(#0A0B19, #02040A);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+    border-bottom: 1px solid #30363C;
+}
+
+.welcomeWrapper--left{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.welcome__img{
+    width: 50%;
+}
+
+.welcomeWrapper--right{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 130%;
+    padding: 4rem;
+}
+
+.welcome__button{
+    color: #E6EDF2;
+    background: #228636;
+    height: 2rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.welcome__button:hover{
+    background: #2A9C41;
+    cursor: pointer;
 }
