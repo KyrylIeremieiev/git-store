@@ -130,6 +130,7 @@ button{
 .products__cardWrapper{
     display: flex;
     flex-wrap: wrap;
+    gap: 4rem;
 }
 
 .products__card{
@@ -174,4 +175,8 @@ button{
 .product__title{
     font-size: 120%;
     font-weight: 500;
+}
+
+.products__cardWrapper{
+    
 }
