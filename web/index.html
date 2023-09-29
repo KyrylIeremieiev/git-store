@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop</title>
+    <script src="https://kit.fontawesome.com/1a0fbdd901.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./src/css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,17 +12,41 @@
     <script src="./src/js/shop.js" defer></script>
 </head>
 <body>
-    <header class="header">
+    <header class="header"> 
         <div class="leftWrap">
             <img src="./src/img/github-mark-white.png" alt="githubs logo" class="leftWrap__logo">
             <h2>Store</h1>
         </div>
         <div class="rightWrap">
+            <button class="cartIcon" id="openCart">
+                <i class="fa-solid fa-cart-shopping">
+                </i>
+                <div class="cartIcon__notify"></div>
+            </button>
             
             <img src="./src/img/avatars/avatarGreen.png" alt="" class="rightWrap__img">
             
         </div>
+        
     </header>
+    <article class="cartMenu" id="cart">
+        <div class="cartMenu__close">
+            <button class="cartMenu__closeBtn" id="close">x</button>
+        </div>
+        <article class="cartMenu__checkout">
+            <h2>Checkout</h2>
+            <section class="cartMenu__item">
+                <img src="./src/img/avatars/avatarBlue.png" alt="" class="cartMenu__img">
+                <article class="cartMenu__dis">
+                    <p>exampleItem</p>
+                    <button class="cartMenu__btn">buy</button>
+                </article>
+            </section>
+        </article>
+        <article class="article__equip">
+            <h2>Equip</h2>
+        </article>
+    </article>
     <main class="main">
         <section class="welcome">
             <div class="welcomeWrapper--left">

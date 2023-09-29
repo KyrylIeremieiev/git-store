@@ -25,6 +25,9 @@ Route::get('/hello', function () {
 
 Route::post('/createAccount', 'App\Http\Controllers\CreateAccountController@insertData');
 
-Route::post('/login', 'App\Http\Controllers\LoginController@login');
+Route::middleware(['cors'])->group(function () {
+  Route::post('/login', 'App\Http\Controllers\LoginController@login');
+});
+
 
 Route::post('/CartIn', 'App\Http\Controllers\CartController@insertData');

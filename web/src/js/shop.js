@@ -9,7 +9,14 @@ class SendToShoppingCart{
     btnCheck(){
         for(let i = 0; i < this.buyBtns.length; i++){
             this.buyBtns[i].onclick = (e) =>{
-                this.SendData(e.target)
+                let accountCheck = this.getCookie("user")
+                if(accountCheck !== null){
+                    this.SendData(e.target)
+                }
+                else{
+                    window.location.href = "./login.html";
+                }
+                
             }
         }
     }
@@ -61,4 +68,24 @@ class SendToShoppingCart{
     }
 }
 
+class Cart{
+    constructor(cartIconId, closeId, cartId){
+        this.cart = document.getElementById(cartId);
+        this.cartIcon = document.getElementById(cartIconId);
+        this.close = document.getElementById(closeId);
+
+        this.cartIcon.onclick = this.openCart;
+        this.close.onclick = this.closeCart;
+    }
+
+    openCart = () =>{
+        this.cart.style.display = "flex";
+    }
+
+    closeCart = () =>{
+        this.cart.style.display = "none";
+    }
+}
+
 const send = new SendToShoppingCart()
+const cart = new Cart("openCart", "close", "cart")

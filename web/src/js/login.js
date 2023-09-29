@@ -22,11 +22,15 @@ class Login{
     getData = () =>{
         fetch("http://localhost:8080/api/login",
             {
+                method: "POST",
+                mode: "cors", // no-cors, *cors, same-origin
+                cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+                credentials: "same-origin",
                 headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
                 },
-                method: "POST",
+
                 body: JSON.stringify({"username": this.name.value, "pass": this.pass.value})
             })
             .then(response => {
