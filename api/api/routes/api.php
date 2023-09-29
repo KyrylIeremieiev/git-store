@@ -31,3 +31,6 @@ Route::middleware(['cors'])->group(function () {
 
 
 Route::post('/CartIn', 'App\Http\Controllers\CartController@insertData');
+
+Route::get('/cart/{id}', "App\Http\Controllers\CartDataController@show");
+Route::get('/equip/{id}', "App\Http\Controllers\EquipableController@show");
