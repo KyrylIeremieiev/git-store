@@ -106,7 +106,7 @@ class Cart{
         this.appendingElementCart = document.getElementById("buy");
         console.log(this.cartData)
         for(let i = 0; i < this.cartData.length; i++){
-            this.createCartItem(this.cartData[i].item, this.cartData[i].item)
+            this.createCartItem(this.cartData[i].item, this.cartData[i].item, i)
             this.appendingElementCart.appendChild(this.cartSection);
         }
     }
@@ -115,7 +115,6 @@ class Cart{
         this.appendingElementEquip = document.getElementById("equip");
         for(let i = 0; i < this.equipData.length; i++){
             this.createEquipItem(this.equipData[i].item, this.equipData[i].item)
-            console.log(this.equipArticle)
             this.appendingElementEquip.appendChild(this.equipSection);
         }
     }
@@ -125,6 +124,8 @@ class Cart{
         this.cartText.innerText = text;
         this.cartButton = document.createElement("button");
         this.cartButton.classList = "cartMenu__btn";
+        this.cartButton.onclick = ()=>{
+            this.transfer(text)}
         this.cartButton.innerHTML = "buy"
 
         this.cartArticle = document.createElement("article");
@@ -147,6 +148,9 @@ class Cart{
         this.equipText.innerText = text;
         this.equipButton = document.createElement("button");
         this.equipButton.classList = "cartMenu__btn";
+        this.equipButton.onclick = ()=>{
+            this.transfer(text)}
+
         this.equipButton.innerText = "equip"
 
         this.equipArticle = document.createElement("article");
@@ -162,6 +166,34 @@ class Cart{
         this.equipSection.classList = "cartMenu__item"
         this.equipSection.appendChild(this.equipImg)
         this.equipSection.appendChild(this.equipArticle)
+    }
+
+    transfer = (Item)=>{
+        fetch("http://localhost:8080/api/transfer",
+        {
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify({"cookie":this.cookie, "item": Item})
+        })
+        .then(function(res){ console.log(res) })
+        .catch(function(res){ console.log(res) })
+    }
+
+    EquipAvatar= (Item)=>{
+        fetch("http://localhost:8080/api/equipAvatar",
+        {
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify({"cookie":this.cookie, "item": Item})
+        })
+        .then(function(res){ console.log(res) })
+        .catch(function(res){ console.log(res) })
     }
 }
 
