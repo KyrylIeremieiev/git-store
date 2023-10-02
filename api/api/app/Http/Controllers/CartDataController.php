@@ -17,5 +17,7 @@ class CartDataController extends Controller
 
         //return the query results as JSON response
         return response()->json($results);
+
+        
     }
 }

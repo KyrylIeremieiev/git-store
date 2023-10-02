@@ -36,3 +36,4 @@ Route::get('/cart/{id}', "App\Http\Controllers\CartDataController@show");
 Route::get('/equip/{id}', "App\Http\Controllers\EquipableController@show");
 
 Route::post('/transfer', "App\Http\Controllers\FromCartToEquipController@transfer");
+Route::post('/equipAvatar', "App\Http\Controllers\AvatarController@Equip");
