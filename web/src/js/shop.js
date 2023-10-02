@@ -3,10 +3,10 @@ class App{
     constructor(){
         this.buyBtns = document.getElementsByClassName("product__button");
         this.cookie = this.getCookie("user");
-        console.log(this.cookie)
         const cart = new Cart("openCart", "close", "cart", this.cookie);
         cart.start().then(()=>{
             this.btnCheck();
+            const profile = new Profile(cart.equipData, document.getElementById('avatar'))
         })
         
     }
@@ -73,6 +73,18 @@ class App{
     }
 }
 
+class Profile{
+    constructor(data, avatarElement){
+        this.avatarElement = avatarElement
+        console.log(data)
+        for(let i = 0; i < data.length; i++){
+            if(data[i].equiped == 1){
+                this.avatarElement.src = './src/img/avatars/' + data[i].item + '.png'
+            }
+        }
+    }
+}
+
 class Cart{
     constructor(cartIconId, closeId, cartId, cookie){
         this.cart = document.getElementById(cartId);
@@ -104,7 +116,6 @@ class Cart{
     
     renderCart = () =>{
         this.appendingElementCart = document.getElementById("buy");
-        console.log(this.cartData)
         for(let i = 0; i < this.cartData.length; i++){
             this.createCartItem(this.cartData[i].item, this.cartData[i].item, i)
             this.appendingElementCart.appendChild(this.cartSection);
@@ -205,7 +216,6 @@ class Data{
             .then(response =>{
                 return response.json();
                 }).then(data =>{
-                    console.log(data)
                     this.cartData = data;
                 });
         await fetch('http://localhost:8080/api/equip/' + cookie,{
@@ -214,7 +224,6 @@ class Data{
             .then(response =>{
                 return response.json();
                 }).then(data =>{
-                    console.log(data)
                     this.equipData = data;
                 });
     }
