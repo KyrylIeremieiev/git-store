@@ -50,7 +50,7 @@ class App{
             method: "POST",
             body: JSON.stringify({"cookie":this.cookie, "item": dataValue})
         })
-        .then(function(res){ console.log(res) })
+        .then(function(res){ location.reload() })
         .catch(function(res){ console.log(res) })
     }
 
@@ -159,8 +159,9 @@ class Cart{
         this.equipText.innerText = text;
         this.equipButton = document.createElement("button");
         this.equipButton.classList = "cartMenu__btn";
+        console.log(text)
         this.equipButton.onclick = ()=>{
-            this.transfer(text)}
+            this.EquipAvatar(text)}
 
         this.equipButton.innerText = "equip"
 
@@ -189,11 +190,12 @@ class Cart{
             method: "POST",
             body: JSON.stringify({"cookie":this.cookie, "item": Item})
         })
-        .then(function(res){ console.log(res) })
+        .then(function(res){ location.reload()})
         .catch(function(res){ console.log(res) })
     }
 
     EquipAvatar= (Item)=>{
+        console.log(Item)
         fetch("http://localhost:8080/api/equipAvatar",
         {
             headers: {
@@ -203,7 +205,7 @@ class Cart{
             method: "POST",
             body: JSON.stringify({"cookie":this.cookie, "item": Item})
         })
-        .then(function(res){ console.log(res) })
+        .then(function(res){ location.reload() })
         .catch(function(res){ console.log(res) })
     }
 }
